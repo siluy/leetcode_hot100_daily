@@ -11,11 +11,11 @@ from collections import defaultdict
 class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
         groups = defaultdict(list)
-        for str in strs:
+        for w in strs:
             cnt = [0] * 26
-            for ch in str:
+            for ch in w:
                 cnt[ord(ch) - ord('a')] += 1
-            groups[tuple(cnt)].append(str)
+            groups[tuple(cnt)].append(w)
         return list(groups.values())
 # @lc code=end
 
