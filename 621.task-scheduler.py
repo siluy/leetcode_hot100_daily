@@ -11,7 +11,7 @@ class Solution:
         freq = Counter(tasks)
         max_cnt = max(freq.values())
         max_count = sum(1 for v in freq.values() if v == max_cnt)
-        frame = (max_cnt - 1) * (n + 1) + max_count
+        frame = (n + 1) * (max_cnt - 1) + max_count
         return max(len(tasks), frame)
 # @lc code=end
 
