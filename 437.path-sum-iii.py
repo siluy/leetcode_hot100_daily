@@ -13,27 +13,12 @@
 #         self.right = right
 class Solution:
     def pathSum(self, root: Optional[TreeNode], targetSum: int) -> int:
-        # prefix = {0: 1}
-        # ans = 0
-        # def dfs(node, cur):
-        #     nonlocal ans
-        #     if not node:
-        #         return
-        #     cur += node.val
-        #     ans += prefix.get(cur - targetSum, 0)
-        #     prefix[cur] = prefix.get(cur, 0) + 1
-        #     dfs(node.left, cur)
-        #     dfs(node.right, cur)
-        #     prefix[cur] -= 1
-
-        # dfs(root, 0)
-        # return ans
         prefix = {0: 1}
         ans = 0
         def dfs(node, cur):
             nonlocal ans
             if not node:
-                return 
+                return
             cur += node.val
             ans += prefix.get(cur - targetSum, 0)
             prefix[cur] = prefix.get(cur, 0) + 1

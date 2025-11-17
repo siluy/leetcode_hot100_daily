@@ -17,10 +17,9 @@ class Solution:
                     q = deque([(i, j)])
                     while q:
                         x, y = q.popleft()
-                        for nx, ny in ((x-1,y), (x+1,y), (x, y-1), (x,y+1)):
+                        for nx, ny in ((x-1, y), (x+1, y), (x, y-1), (x, y+1)):
                             if 0 <= nx < m and 0 <= ny < n and grid[nx][ny] == '1':
                                 grid[nx][ny] = '0'
-                                q.append((nx,ny))
+                                q.append((nx, ny))
         return count
 # @lc code=end
-

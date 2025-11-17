@@ -15,7 +15,7 @@ class Solution:
     def rob(self, root: Optional[TreeNode]) -> int:
         def dfs(node):
             if not node:
-                return (0,0)
+                return (0, 0)
             left_rob, left_skip = dfs(node.left)
             right_rob, right_skip = dfs(node.right)
             rob_this = node.val + left_skip + right_skip

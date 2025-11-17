@@ -19,7 +19,6 @@ class Solution:
             fast = fast.next.next
             if slow is fast:
                 return True
-        else:
-            return False
+        return False
 # @lc code=end
 

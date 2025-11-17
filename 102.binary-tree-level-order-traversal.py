@@ -20,7 +20,8 @@ class Solution:
         q = deque([root])
         while q:
             level = []
-            for _ in range(len(q)):
+            level_size = len(q)
+            for _ in range(level_size):
                 node = q.popleft()
                 level.append(node.val)
                 if node.left:

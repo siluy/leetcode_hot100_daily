@@ -15,9 +15,11 @@ class Solution:
                 return True
             if r < 0 or c < 0 or r >= m or c >= n or board[r][c] != word[idx]:
                 return False
-            tmp, board[r][c] = board[r][c], '#'
-            found = (dfs(r + 1, c, idx + 1) or dfs(r - 1, c, idx + 1) or
-                     dfs(r, c + 1, idx + 1) or dfs(r, c - 1, idx + 1))
+            tmp, board[r][c] = board[r][c], "#"
+            found = (dfs(r + 1, c, idx + 1) or
+                     dfs(r - 1, c, idx + 1) or
+                     dfs(r, c + 1, idx + 1) or
+                     dfs(r, c - 1, idx + 1))
             board[r][c] = tmp
             return found
         for i in range(m):
@@ -25,6 +27,5 @@ class Solution:
                 if board[i][j] == word[0] and dfs(i, j, 0):
                     return True
         return False
-
 # @lc code=end
 

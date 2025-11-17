@@ -12,11 +12,12 @@ class Solution:
         start = end = 0
         def expand(l, r):
             nonlocal start, end
-            while l >= 0 and r < len(s) and s[l] == s[r]:
+            while l >= 0 and r <= len(s) - 1 and s[l] == s[r]:
                 l -= 1
                 r += 1
             if r - l - 2 > end - start:
-                start, end = l + 1, r - 1
+                start = l + 1
+                end = r - 1
         for i in range(len(s)):
             expand(i, i)
             expand(i, i + 1)

@@ -19,7 +19,7 @@ class Solution:
             else:
                 tail.next, list2 = list2, list2.next
             tail = tail.next
-        tail.next = list1 if list1 else list2
+        tail.next = list2 if list2 else list1
         return dummy.next
 # @lc code=end
 
